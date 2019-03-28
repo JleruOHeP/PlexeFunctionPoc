@@ -6,6 +6,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Plexe.Function.Models;
+using Plexe.Function.Settings;
 
 namespace Plexe.Function
 {
