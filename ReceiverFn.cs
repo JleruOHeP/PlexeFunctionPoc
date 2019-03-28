@@ -6,7 +6,6 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Plexe.Function.Models;
-using Plexe.Function.Settings;
 
 namespace Plexe.Function
 {
@@ -18,7 +17,6 @@ namespace Plexe.Function
             ILogger logger
         )
         {
-            var settings = ReminderSettings.GetReminderSettings();
             var request = JsonConvert.DeserializeObject<RequestModel>(Encoding.UTF8.GetString(eventMessage.Body));            
 
             logger.LogInformation($"Received {request.Message}");

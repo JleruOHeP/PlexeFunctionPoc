@@ -1,0 +1,4 @@
+/home/mikhail/Projects/Simon/PlexeFunctionPoc/obj/Release/netcoreapp2.1/Plexe.Function.Poc.csprojAssemblyReference.cache
+/home/mikhail/Projects/Simon/PlexeFunctionPoc/obj/Release/netcoreapp2.1/Plexe.Function.Poc.csproj.CoreCompileInputs.cache
+/home/mikhail/Projects/Simon/PlexeFunctionPoc/obj/Release/netcoreapp2.1/Plexe.Function.Poc.AssemblyInfoInputs.cache
+/home/mikhail/Projects/Simon/PlexeFunctionPoc/obj/Release/netcoreapp2.1/Plexe.Function.Poc.AssemblyInfo.cs

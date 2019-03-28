@@ -23,10 +23,11 @@ namespace Plexe.Function
         )
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var message = new Message(Encoding.UTF8.GetBytes(new RequestModel
+            var messageBody = JsonConvert.SerializeObject(new RequestModel
             {
                 Message = requestBody
-            }));
+            });
+            var message = new Message(Encoding.UTF8.GetBytes(messageBody));
 
             var settings = FunctionSettings.GetFunctionSettings();
             var queueClient = new QueueClient(settings.ServiceBusConnectionString, settings.ServiceBusQueueName);

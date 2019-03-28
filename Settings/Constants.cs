@@ -1,6 +1,6 @@
 ﻿namespace Plexe.Function.Settings
 {
-    internal class Constants
+    public class Constants
     {
         public const string ServiceBusConnectionStringSetting = "ServiceBusConnectionString";
 
