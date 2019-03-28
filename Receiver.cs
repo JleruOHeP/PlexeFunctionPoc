@@ -10,18 +10,18 @@ using Plexe.Function.Settings;
 
 namespace Plexe.Function
 {
-    public static class PocFn
+    public static class ReceiverFn
     {
-        [FunctionName(nameof(PocFn))]
-        public static async Task<IActionResult> Run(
+        [FunctionName(nameof(Receiver))]
+        public static async Task Run(
             [ServiceBusTrigger(Constants.QueueName, Connection = Constants.ServiceBusConnectionStringSetting)]Message eventMessage,
             ILogger logger
         )
         {
             var settings = ReminderSettings.GetReminderSettings();
-            var request = JsonConvert.DeserializeObject<RequestModel>(Encoding.UTF8.GetString(eventMessage.Body));
+            var request = JsonConvert.DeserializeObject<RequestModel>(Encoding.UTF8.GetString(eventMessage.Body));            
 
-            return new OkObjectResult($"Received {request.Message}");
+            logger.LogInformation($"Received {request.Message}");
         }
     }
 }

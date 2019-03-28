@@ -4,6 +4,6 @@
     {
         public const string ServiceBusConnectionStringSetting = "ServiceBusConnectionString";
 
-        public const string QueueName = "reminder-requests";
+        public const string QueueName = "plexe-requests";
     }
 }
