@@ -1,0 +1,38 @@
+name: 1.0.$(BuildID)
+ 
+queue:
+  name: Hosted VS2017
+    
+variables:
+  BuildConfiguration: Release
+  FunctionProject: 'Plexe.Function.Poc.csproj'
+
+steps:
+ 
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: $(FunctionProject)
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish Function'
+  inputs:
+    command: publish
+    projects: $(FunctionProject)
+    publishWebProjects: False
+    zipAfterPublish: True
+    arguments: '-c $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:Version=1.0.$(Build.BuildID)'
+
+- task: CopyFiles@2
+  displayName: 'Copy resourceGroup template'
+  inputs:
+    SourceFolder: './Templates'
+    Contents: '*.json'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+ 

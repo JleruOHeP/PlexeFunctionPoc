@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Plexe.Function.Poc": {
+      "commandName": "Project",
+      "environmentVariables": {
+      }
+    }
+  }
+}
