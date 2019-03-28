@@ -12,7 +12,7 @@ namespace Plexe.Function
 {
     public static class ReceiverFn
     {
-        [FunctionName(nameof(Receiver))]
+        [FunctionName(nameof(ReceiverFn))]
         public static async Task Run(
             [ServiceBusTrigger(Constants.QueueName, Connection = Constants.ServiceBusConnectionStringSetting)]Message eventMessage,
             ILogger logger
